@@ -1,0 +1,12 @@
+// Main route
+app.get('/main', function(req, res, next){
+  api.user(req.session.uid, function(err, result, remaining, limit){
+    if(err){
+      res.send(err);
+    }
+    res.render('main', {
+      title: 'My Instagram',
+      user: result
+    });
+  });
+});
