@@ -1,0 +1,11 @@
+// Main route
+app.get('/main', function(req, res, next){
+  res.render('main', {
+    title: 'My Instagram'
+  });
+});
+
+// Login routes
+app.get('/login', exports.authorize_user);
+// Handleauth route
+app.get('/handleauth', exports.handleauth);
