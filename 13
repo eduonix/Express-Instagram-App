@@ -1,0 +1,7 @@
+      <% medias.forEach(function(media){ %>
+        <div class="col_4">
+          <a href="#">
+            <img src="<%= media.images.low_resolution.url %>">
+            <small class="meta">Posted by <%= media.user.username %> on <%= formatDate(media.created_time) %></small>
+          </a>
+      </div>
