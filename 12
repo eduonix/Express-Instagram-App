@@ -1,0 +1,18 @@
+// Main route
+app.get('/main', function(req, res, next){
+  api.user(req.session.uid, function(err, result, remaining, limit){
+    if(err){
+      res.send(err);
+    }
+    api.user_media_recent(req.session.uid, {}, function(err, medias, pagination, remaining, limit){
+      if(err){
+        res.send(err);
+      }
+      res.render('main', {
+        title: 'My Instagram',
+        user: result,
+        medias: medias
+      });
+    });
+  });
+});
