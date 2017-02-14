@@ -1,0 +1,6 @@
+// Logout route
+app.get('/logout', function(req, res, next){
+  req.session.accesstoken = false;
+  req.session.uid = false;
+  res.redirect('/');
+});
