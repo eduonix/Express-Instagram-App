@@ -1,0 +1,7 @@
+// Global vars
+app.use(function(req, res, next){
+  // Format date
+  res.locals.formatDate = function(date){
+    var myDate= new Date(date *1000);
+    return myDate.toLocaleString();
+  }
